@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plazma Burst 2</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      height: 100%;
+      overflow: hidden;
+    }
+    #game-container {
+      width: 800px;
+      height: 600px;
+      margin: auto;
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    ruffle-player {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+  <!-- Load your self-hosted Ruffle build -->
+  <script src="ruffle/ruffle.js"></script>
+</head>
+<body>
+  <div id="game-container">
+    <object
+      data="plazma_burst_2.swf"
+      type="application/x-shockwave-flash"
+      width="800"
+      height="600">
+      <param name="allowFullScreen" value="true">
+      <param name="allowScriptAccess" value="always">
+    </object>
+  </div>
+
+  <script>
+    // Optional: configure Ruffle
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("DOMContentLoaded", () => {
+      const ruffle = window.RufflePlayer.newest();
+      ruffle.configure({
+        autoplay: "on",
+        unmuteOverlay: "hidden"
+      });
+    });
+  </script>
+</body>
+</html>
